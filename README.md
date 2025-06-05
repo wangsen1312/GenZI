@@ -48,13 +48,16 @@ conda install -y open3d-admin::open3d=0.10.0.0
 ```
 ## Install from libs mainly module load and pip use for alliance can
 ### generate env
+```shell
 module load python/3.11
 virtualenv --no-download genzi
 source genzi/bin/activate
 module load StdEnv/2023
 module load cuda/12.2 
+```
 
 ### get some essential libs
+```shell
 pip install pytorch3d
 pip install pycocotools munkres natsort tensorboardX terminaltables visdom timm
 pip install git+https://github.com/NVlabs/nvdiffrast.git
@@ -64,17 +67,18 @@ pip install pandas plyfile  PyOpenGL pyrender open3d
 pip install loguru matplotlib ninja omegaconf numpy==1.26.4 Cython
 pip install black chumpy easydict ftfy imageio-ffmpeg imageio kaleido 
 pip install regex shapely torchgeometry usort protobuf
-
+```
 ### build Alphapose and torch-mesh-isect
+```shell
 pip install git+https://github.com/Ambrosiussen/HalpeCOCOAPI.git#subdirectory=PythonAPI
 pip install git+https://github.com/yanfengliu/cython_bbox.git
 
-salloc gpu for build
+salloc gpu for build (salloc --account=def-xinxin --gres=gpu:a100_1g.5gb:1 --mem=20G --cpus-per-task=5 --time=00:10:00)
 Follow https://github.com/MVIG-SJTU/AlphaPose/blob/master/docs/INSTALL.md
 python3 setup.py build develop --user
 
-Follow https://github.com/vchoutas/torch-mesh-isect
-
+Follow https://github.com/vchoutas/torch-mesh-isect to install 
+```
 
 
 ## Data
