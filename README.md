@@ -58,12 +58,12 @@ module load cuda/12.2
 
 ### get some essential libs
 ```shell
-pip install pytorch3d
+pip install pytorch3d open3d
 pip install pycocotools munkres natsort tensorboardX terminaltables visdom timm
 pip install git+https://github.com/NVlabs/nvdiffrast.git
-pip install diffusers transformers safetensors accelerate wandb
+pip install diffusers transformers==4.31.0 safetensors accelerate wandb
 pip install -U --no-deps smplx==0.1.28 git+https://github.com/nghorbani/human_body_prior.git
-pip install pandas plyfile  PyOpenGL pyrender open3d
+pip install pandas plyfile  PyOpenGL pyrender
 pip install loguru matplotlib ninja omegaconf numpy==1.26.4 Cython
 pip install black chumpy easydict ftfy imageio-ffmpeg imageio kaleido 
 pip install regex shapely torchgeometry usort protobuf
