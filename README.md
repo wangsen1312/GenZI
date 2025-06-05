@@ -73,7 +73,7 @@ pip install regex shapely torchgeometry usort protobuf
 pip install git+https://github.com/Ambrosiussen/HalpeCOCOAPI.git#subdirectory=PythonAPI
 pip install git+https://github.com/yanfengliu/cython_bbox.git
 
-salloc gpu for build (salloc --account=def-xinxin --gres=gpu:a100_1g.5gb:1 --mem=20G --cpus-per-task=5 --time=00:10:00)
+salloc gpu for build (salloc --account=def-XXX --gres=gpu:v100:1 --mem=20G --cpus-per-task=5 --time=00:10:00)
 Follow https://github.com/MVIG-SJTU/AlphaPose/blob/master/docs/INSTALL.md
 python3 setup.py build develop --user
 
