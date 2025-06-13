@@ -77,8 +77,8 @@ salloc gpu for build (salloc --account=def-XXX --gres=gpu:v100:1 --mem=20G --cpu
 Follow https://github.com/MVIG-SJTU/AlphaPose/blob/master/docs/INSTALL.md
 python3 setup.py build develop --user
 
-Follow https://github.com/vchoutas/torch-mesh-isect to install
-use this method to deal with https://github.com/vchoutas/torch-mesh-isect/issues/24
+Follow https://github.com/wangsen1312/torch-mesh-isect/ to install
+Most of the issues are solved in this repo
 python setup.py install --user
 ```
 
