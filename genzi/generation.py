@@ -1,7 +1,7 @@
 import os
 import os.path as osp
 import sys
-import wandb
+# import wandb
 import pickle
 import numpy as np
 import glob
@@ -66,23 +66,23 @@ class GenZI(object):
         if not valid_str(cfg["exp_time"]):
             cfg["exp_time"] = curr_time
 
-        wandb_dir = osp.join(cfg["log_dir"], f'{cfg["group"]}_{cfg["curr_time"]}')
+        # wandb_dir = osp.join(cfg["log_dir"], f'{cfg["group"]}_{cfg["curr_time"]}')
         log_dir = osp.join(cfg["log_dir"], f'{cfg["group"]}_{cfg["exp_time"]}')
         cfg["log_dir"] = log_dir
-        may_create_folder(wandb_dir)
+        # may_create_folder(wandb_dir)
         may_create_folder(log_dir)
 
         print("[*] Using log dir", cfg["log_dir"])
 
-        wandb.init(
-            project=cfg["project"],
-            dir=wandb_dir,
-            group=cfg["group"],
-            notes=cfg["notes"],
-            tags=cfg["tags"],
-            settings=wandb.Settings(start_method="fork"),
-        )
-        wandb.config.update(cfg)
+        # wandb.init(
+        #     project=cfg["project"],
+        #     dir=wandb_dir,
+        #     group=cfg["group"],
+        #     notes=cfg["notes"],
+        #     tags=cfg["tags"],
+        #     settings=wandb.Settings(start_method="fork"),
+        # )
+        # wandb.config.update(cfg)
 
         write_yaml(
             osp.join(
@@ -92,14 +92,14 @@ class GenZI(object):
             flow_style=None,
         )
 
-        wandb_cfg = {
-            "id": wandb.run.id,
-            "name": wandb.run.name,
-            "group": wandb.run.group,
-            "project": wandb.run.project,
-            "url": wandb.run.url,
-        }
-        write_yaml(osp.join(wandb_dir, "wandb.yml"), wandb_cfg, flow_style=False)
+        # wandb_cfg = {
+        #     "id": wandb.run.id,
+        #     "name": wandb.run.name,
+        #     "group": wandb.run.group,
+        #     "project": wandb.run.project,
+        #     "url": wandb.run.url,
+        # }
+        # write_yaml(osp.join(wandb_dir, "wandb.yml"), wandb_cfg, flow_style=False)
 
         self.timers = defaultdict(Timer)
 
@@ -491,7 +491,7 @@ class GenZI(object):
                 log_dict = {lk: lv.item() for lk, lv in loss_dict.items()}
                 for optimizer in optimizers:
                     log_dict[f"lr_{optimizer.get_name()}"] = optimizer.get_lr()
-                wandb.log(log_dict)
+                # wandb.log(log_dict)
 
                 hsimages = render_hsi(
                     data_type=cfg["group"],
@@ -875,7 +875,7 @@ class GenZI(object):
                     scene_name=scene_name,
                     interaction_label=scene_cfg["interactions"][pid],
                 )
-            wandb.log({f"time.{tn}": tt.average_time for tn, tt in self.timers.items()})
+            # wandb.log({f"time.{tn}": tt.average_time for tn, tt in self.timers.items()})
 
         print(f"[*] Finished optimization on all scenes")
 
