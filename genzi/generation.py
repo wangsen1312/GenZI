@@ -527,12 +527,13 @@ class GenZI(object):
             smplx_dict["vertices"],
             smplx_dict["faces"],
         )
-        save_smplx_mesh(
-            osp.join(out_dir, "optim_human.obj"),
-            cfg["smplx.uv_path"],
-            cfg["smplx.tex_path"],
-            smplx_dict["vertices"],
-        )
+        # temporily comment out the texture saving
+        # save_smplx_mesh(
+        #     osp.join(out_dir, "optim_human.obj"),
+        #     cfg["smplx.uv_path"],
+        #     cfg["smplx.tex_path"],
+        #     smplx_dict["vertices"],
+        # )
 
         skrender_args = get_human_render_args(
             data_type=cfg["group"], has_texture=False, render_args=render_args

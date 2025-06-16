@@ -82,6 +82,10 @@ Most of the issues are solved in this repo
 python setup.py install --user
 ```
 
+## some predefined 
+
+###  SMPL-X
+download models_smplx_v1_1.zip, smplx_uv.zip, and V02_05.zip from smplx[https://smpl-x.is.tue.mpg.de/download.php], unzip V02_05.zip and models_smplx_v1_1.zip under data/smpl-x/. rename smplx_uv.png to 
 
 ## Data
 

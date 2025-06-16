@@ -4,7 +4,7 @@
 #conda activate genzi
 
 export TF_CPP_MIN_LOG_LEVEL=3
-export WANDB_MODE=offline
+# export WANDB_MODE=offline
 export TOKENIZERS_PARALLELISM=false
 export PYOPENGL_PLATFORM=egl
 
