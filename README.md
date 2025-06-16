@@ -68,6 +68,7 @@ pip install loguru matplotlib ninja omegaconf numpy==1.26.4 Cython
 pip install black chumpy easydict ftfy imageio-ffmpeg imageio kaleido 
 pip install regex shapely torchgeometry usort protobuf
 pip install transformers==4.31.0
+pip install xformers==0.0.30
 ```
 ### build Alphapose and torch-mesh-isect
 ```shell
@@ -83,16 +84,15 @@ Most of the issues are solved in this repo
 python setup.py install --user
 ```
 
-## some predefined 
-
-###  SMPL-X
-download models_smplx_v1_1.zip, smplx_uv.zip, and V02_05.zip from smplx[https://smpl-x.is.tue.mpg.de/download.php], unzip V02_05.zip and models_smplx_v1_1.zip under data/smpl-x/. rename V02_05/ to vposer_V02_05/
-
 
 ## Data
 
 The 3D scene data and our generation results can be found [here](https://1drv.ms/u/s!Alg6Vpe53dEDgrcBClkV5NvqydM9Xg?e=nsyPeU).
 Extract the content of the zipped file to the root directory of the code.
+
+##  SMPL-X
+download models_smplx_v1_1.zip, and V02_05.zip from smplx[https://smpl-x.is.tue.mpg.de/download.php], unzip V02_05.zip and models_smplx_v1_1.zip under data/smpl-x/. rename V02_05/ to vposer_V02_05/;  rename models/ to models_smplx_v1_1/
+ 
 
 ## Running
 
