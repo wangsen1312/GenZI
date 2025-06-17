@@ -58,16 +58,18 @@ module load cuda/12.2
 
 ### get some essential libs
 ```shell
-pip install pytorch3d open3d
-pip install pycocotools munkres natsort tensorboardX terminaltables visdom timm
+pip install pytorch3d==0.7.5 open3d==0.18.0
 pip install git+https://github.com/NVlabs/nvdiffrast.git
-pip install diffusers safetensors accelerate wandb triton
 pip install -U --no-deps smplx==0.1.28 git+https://github.com/nghorbani/human_body_prior.git
+pip install pycocotools munkres natsort tensorboardX terminaltables visdom timm
+pip install diffusers safetensors accelerate wandb triton
 pip install pandas plyfile PyOpenGL pyrender
-pip install loguru matplotlib ninja omegaconf numpy==1.26.4 Cython
+pip install loguru matplotlib ninja omegaconf Cython
 pip install black chumpy easydict ftfy imageio-ffmpeg imageio kaleido 
 pip install regex shapely torchgeometry usort protobuf
-pip install transformers==4.31.0 xformers==0.0.30
+pip install transformers==4.31.0 numpy==1.26.4
+pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0
+pip install xformers==0.0.29.post2
 ```
 ### build Alphapose and torch-mesh-isect
 ```shell
@@ -77,6 +79,8 @@ pip install git+https://github.com/yanfengliu/cython_bbox.git
 salloc gpu for build (salloc --account=def-XXX --gres=gpu:v100:1 --mem=20G --cpus-per-task=5 --time=00:10:00)
 Follow https://github.com/MVIG-SJTU/AlphaPose/blob/master/docs/INSTALL.md
 python3 setup.py build develop --user
+
+should successfully see Finished processing dependencies for alphapose==0.5.0+c60106d
 
 Follow https://github.com/wangsen1312/torch-mesh-isect/ to install
 Most of the issues are solved in this repo
