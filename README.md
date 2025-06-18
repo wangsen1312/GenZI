@@ -68,7 +68,7 @@ pip install loguru matplotlib ninja omegaconf Cython
 pip install black chumpy easydict ftfy imageio-ffmpeg imageio kaleido 
 pip install regex shapely torchgeometry usort protobuf
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0
-pip install transformers==4.31.0 numpy==1.26.4 diffusers[torch]==0.21.0
+pip install transformers==4.31.0 numpy==1.26.4 diffusers[torch]==0.21.0 diffusers=0.21.0 huggingface_hub==0.14.1
 pip install xformers==0.0.29.post2
 ```
 ### build Alphapose and torch-mesh-isect
